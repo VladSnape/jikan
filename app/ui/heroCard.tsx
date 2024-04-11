@@ -90,7 +90,9 @@ const getAnimeDetails = async() => {
     "use server"
     const apiUrl = process.env.API_URL
     const randomNumber = generateRandomNumber()
-    const res = await fetch(`${apiUrl}${randomNumber}`)
+    const res = await fetch(`${apiUrl}${randomNumber}` ,{
+    cache : 'no-store'
+    } )
     const data = await res.json()
     return data
 }

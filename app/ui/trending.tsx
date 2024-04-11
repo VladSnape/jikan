@@ -32,7 +32,9 @@ const getRecomandations = async( ) => {
     const id = "1"
     const apiUrl = process.env.API_URL
 
-    const data = await fetch(`${apiUrl}1/recommendations`)
+    const data = await fetch(`${apiUrl}1/recommendations`  ,{
+      cache : 'no-store'
+      } )
     return data.json()
 }
 
